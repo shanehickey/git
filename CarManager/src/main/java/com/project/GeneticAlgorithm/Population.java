@@ -28,7 +28,7 @@ public class Population {
 					   return 0;
 				   }
 			   }
-			});
+		});
 		
 		Chromosome[] array = new Chromosome[list.size()];
 		return list.toArray(array);

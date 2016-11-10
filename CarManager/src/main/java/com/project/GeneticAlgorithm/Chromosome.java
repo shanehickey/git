@@ -42,7 +42,7 @@ public class Chromosome {
 	}
 	
 	private int getNumberOfCars(){
-		return 3;
+		return 2;
 	}
 	
 	public int[] getGenes(){
