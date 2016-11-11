@@ -35,8 +35,8 @@ public class Chromosome {
 		map.put(4, 5);
 		map.put(5, 6);
 		map.put(6, 7);
-		map.put(7, 8);
-		map.put(8, 8);
+		map.put(7, 7);
+		map.put(8, 7);
 		map.put(9, 8);
 		
 	}
@@ -65,9 +65,10 @@ public class Chromosome {
 	public int calculateFitness(){
 		int cost = 0;
 		for(int i = 0 ; i < genes.length ; i++){
-			for(int j = i + 1 ; i < genes.length ; i++){
+			for(int j = i + 1 ; j < genes.length ; j++){
 				if(genes[i] == genes[j] && map.get(i).equals(map.get(j))){
-					cost += 1;
+					cost += 10;
+					genes[j] = 10;
 				}
 			}
 		}
@@ -82,6 +83,16 @@ public class Chromosome {
 		}
 		
 		return chromosomeFitness;
+	}
+	
+	public void repairChromosome(){
+		for(int i = 0 ; i < genes.length ; i++){
+			for(int j = i + 1 ; j < genes.length ; j++){
+				if(genes[i] == genes[j] && map.get(i).equals(map.get(j))){
+					genes[j] = 10;
+				}
+			}
+		}
 	}
 	
 	public boolean isLegal(){
